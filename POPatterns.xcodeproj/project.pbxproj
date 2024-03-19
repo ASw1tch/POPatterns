@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		EAE3A7B22BAA056E003BB154 /* POPatternsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3A7B12BAA056E003BB154 /* POPatternsApp.swift */; };
-		EAE3A7B42BAA056E003BB154 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3A7B32BAA056E003BB154 /* ContentView.swift */; };
+		EAE3A7B42BAA056E003BB154 /* PatternsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3A7B32BAA056E003BB154 /* PatternsView.swift */; };
 		EAE3A7B62BAA0570003BB154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE3A7B52BAA0570003BB154 /* Assets.xcassets */; };
 		EAE3A7B92BAA0570003BB154 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE3A7B82BAA0570003BB154 /* Preview Assets.xcassets */; };
+		EAE3A7C02BAA0700003BB154 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3A7BF2BAA0700003BB154 /* ColorHelper.swift */; };
+		EAE3A7C22BAA0965003BB154 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3A7C12BAA0965003BB154 /* ButtonView.swift */; };
+		EAE3A7C72BAA12B8003BB154 /* ButtonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3A7C62BAA12B8003BB154 /* ButtonImageView.swift */; };
+		EAE3A7C92BAA312E003BB154 /* PatternDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3A7C82BAA312E003BB154 /* PatternDetailsView.swift */; };
+		EAFF37592BAA3E9D00961755 /* PNLCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFF37582BAA3E9D00961755 /* PNLCalculatorView.swift */; };
+		EAFF375B2BAA3ED700961755 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFF375A2BAA3ED700961755 /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EAE3A7AE2BAA056E003BB154 /* POPatterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POPatterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE3A7B12BAA056E003BB154 /* POPatternsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPatternsApp.swift; sourceTree = "<group>"; };
-		EAE3A7B32BAA056E003BB154 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EAE3A7B32BAA056E003BB154 /* PatternsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsView.swift; sourceTree = "<group>"; };
 		EAE3A7B52BAA0570003BB154 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAE3A7B82BAA0570003BB154 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EAE3A7BF2BAA0700003BB154 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		EAE3A7C12BAA0965003BB154 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		EAE3A7C62BAA12B8003BB154 /* ButtonImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImageView.swift; sourceTree = "<group>"; };
+		EAE3A7C82BAA312E003BB154 /* PatternDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDetailsView.swift; sourceTree = "<group>"; };
+		EAFF37582BAA3E9D00961755 /* PNLCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNLCalculatorView.swift; sourceTree = "<group>"; };
+		EAFF375A2BAA3ED700961755 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				EAE3A7B12BAA056E003BB154 /* POPatternsApp.swift */,
-				EAE3A7B32BAA056E003BB154 /* ContentView.swift */,
+				EAE3A7C32BAA0A53003BB154 /* View */,
 				EAE3A7B52BAA0570003BB154 /* Assets.xcassets */,
 				EAE3A7B72BAA0570003BB154 /* Preview Content */,
+				EAE3A7BF2BAA0700003BB154 /* ColorHelper.swift */,
 			);
 			path = POPatterns;
 			sourceTree = "<group>";
@@ -65,6 +78,19 @@
 				EAE3A7B82BAA0570003BB154 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EAE3A7C32BAA0A53003BB154 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EAE3A7B32BAA056E003BB154 /* PatternsView.swift */,
+				EAE3A7C12BAA0965003BB154 /* ButtonView.swift */,
+				EAFF37582BAA3E9D00961755 /* PNLCalculatorView.swift */,
+				EAE3A7C62BAA12B8003BB154 /* ButtonImageView.swift */,
+				EAE3A7C82BAA312E003BB154 /* PatternDetailsView.swift */,
+				EAFF375A2BAA3ED700961755 /* FavoritesView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +163,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAE3A7B42BAA056E003BB154 /* ContentView.swift in Sources */,
+				EAE3A7C92BAA312E003BB154 /* PatternDetailsView.swift in Sources */,
+				EAFF37592BAA3E9D00961755 /* PNLCalculatorView.swift in Sources */,
+				EAE3A7C72BAA12B8003BB154 /* ButtonImageView.swift in Sources */,
+				EAE3A7B42BAA056E003BB154 /* PatternsView.swift in Sources */,
+				EAFF375B2BAA3ED700961755 /* FavoritesView.swift in Sources */,
+				EAE3A7C02BAA0700003BB154 /* ColorHelper.swift in Sources */,
+				EAE3A7C22BAA0965003BB154 /* ButtonView.swift in Sources */,
 				EAE3A7B22BAA056E003BB154 /* POPatternsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
