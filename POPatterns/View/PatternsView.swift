@@ -8,6 +8,18 @@
 import SwiftUI
 
 struct PatternsView: View {
+    let patterns: [PatternModel] = [
+        .ascendingTriangle,
+        .cupAndHandle,
+        .descendingTriangle,
+        .doubleBottom,
+        .doubleTop,
+        .headNShoulders,
+        .pennantOrFlags,
+        .roundingBottom,
+        .symmetricalTriangle,
+        .wedges
+    ]
     var body: some View {
         NavigationStack {
         ZStack {
@@ -17,7 +29,7 @@ struct PatternsView: View {
                     .ignoresSafeArea()
             ScrollView {
                 VStack(spacing: 10) {
-                    NavigationLink(destination: PNLCalculatorView(), label: {
+                    NavigationLink(destination: PNLCalculatorView(entryPrice: 0, exitPrice: 0, sharesAmount: 0, feePercentage: 0), label: {
                         Text("PNL ASSISTANT")
                         Image(systemName: "chevron.compact.forward")
                     })
@@ -28,9 +40,13 @@ struct PatternsView: View {
                     .background(.white)
                     .cornerRadius(10)
                     
-                    ButtonImageView(title: "ascending triangle", image: UIImage(imageLiteralResourceName: "ascending-triangle"), action: {print("Button tapped")})
-                    
+                    ForEach(patterns, id: \.self) { pattern in
+                        ButtonImageView(title: pattern.title, image: UIImage(imageLiteralResourceName: pattern.imageName), action: {
+                            
+                            print("Button tapped for pattern: \(pattern.title)")
+                        })
                     }
+                }
                 }.padding()
             } .toolbar {
                 ToolbarItemGroup(placement: .automatic) {

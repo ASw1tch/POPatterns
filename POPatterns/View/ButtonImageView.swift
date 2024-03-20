@@ -36,7 +36,7 @@ struct ButtonImageView: View {
                                 .textCase(.uppercase)
                                 .frame(alignment: .leading)
                                 .padding()
-                            Image(systemName: "chevron.compact.forward")
+                            Image(systemName: "arrow.right")
                                 .padding()
                                 .foregroundColor(.black)
                         }

@@ -9,7 +9,17 @@ import SwiftUI
 
 struct FavoritesView: View {
     var body: some View {
-        Text("Favorites")
+        NavigationStack {
+            ZStack {
+                LinearGradient(colors: [(Color(hex: "FFFFF")), (Color(hex: "00C2FF")) ],
+                               startPoint: .top,
+                               endPoint: .bottom)
+                .ignoresSafeArea()
+                ScrollView {
+                    Text("Favorites")
+                }
+            }
+        }
     }
 }
 
