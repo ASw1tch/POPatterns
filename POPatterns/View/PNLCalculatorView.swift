@@ -30,24 +30,18 @@ struct PNLCalculatorView: View {
                 
                 VStack(spacing: 20) {
                     
-                    Button {
-                        print("Back to patterns")
-                    } label: {
-                        ZStack(alignment: .leading) {
-                            HStack {
-                                Image(systemName: "arrow.left")
-                                    .foregroundColor(.black)
-                                Text("BACK TO PATTERNS")
-                                    .padding()
-                                    .foregroundColor(.black)
-                                    .textCase(.uppercase)
-                                    .frame(alignment: .leading)
-                                
-                            }.frame(width: 350)
-                                .background(.white)
-                                .cornerRadius(10)
-                        }
-                    }
+                    NavigationLink(destination: PatternsView(), label: {
+                        Image(systemName: "arrow.left")
+                        Text("BACK TO PATTERNTS")
+                        
+                    })
+                    .padding()
+                    .font(.subheadline)
+                    .frame(width: 350)
+                    .foregroundColor(.black)
+                    .background(.white)
+                    .cornerRadius(10)
+
                     
                     ZStack {
                         RoundedRectangle(cornerRadius: 15)

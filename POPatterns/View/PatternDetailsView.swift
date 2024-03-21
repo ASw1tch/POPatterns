@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PatternDetailsView: View {
+    
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -27,7 +29,7 @@ struct PatternDetailsView: View {
                         }
                         VStack(spacing: 10) {
                             ScrollView {
-                                Text("The ascending triangle is a bullish continuation pattern which signifies the continuation of an uptrend. Ascending triangles can be drawn onto charts by placing a horizontal line along the swing highs – the resistance – and then drawing an ascending trend line along the swing lows – the support. Ascending triangles often have two or more identical peak highs which allow for the horizontal line to be drawn. The trend line signifies the overall uptrend of the pattern, while the horizontal line indicates the historic level of resistance for that particular asset. The ascending triangle is a bullish continuation pattern which signifies the continuation of an uptrend. Ascending triangles can be drawn onto charts by placing a horizontal line along the swing highs – the resistance – and then drawing an ascending trend line along the swing lows – the support. Ascending triangles often have two or more identical peak highs which allow for the horizontal line to be drawn. The trend line signifies the overall uptrend of the pattern, while the horizontal line indicates the historic level of resistance for that particular asset.")
+                                Text("Description here")
                                     .padding()
                             }
                             .frame(width: 350, height: 350)

@@ -11,19 +11,15 @@ struct ButtonImageView: View {
     
     var title: String
     var image: UIImage
-    var action: () -> Void
+
     
-    init(title: String, image: UIImage, action: @escaping () -> Void) {
+    init(title: String, image: UIImage) {
         self.title = title
         self.image = image
-        self.action = action
+
     }
     
     var body: some View {
-        
-            Button {
-                action()
-            } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(width: 350, height: 150)
@@ -45,12 +41,12 @@ struct ButtonImageView: View {
                             .frame(width: 350, height: 150)
                             .opacity(0.3)
                             .blur(radius: 3.0)
-                }
+                
             }
         }
     }
 }
 
 #Preview {
-    ButtonImageView(title: "descending triangle", image: UIImage(imageLiteralResourceName: "descending-triangle"), action: {print("button tapped")})
+    ButtonImageView(title: "descending triangle", image: UIImage(imageLiteralResourceName: "descending-triangle"))
 }
