@@ -44,7 +44,7 @@ struct PatternsView: View {
                         .cornerRadius(10)
                         
                         ForEach(patterns, id: \.self) { pattern in
-                            NavigationLink(destination: PatternDetailsView()) {
+                            NavigationLink(destination: PatternDetailsView(patterns: pattern)) {
                                 ButtonImageView(title: pattern.title, image: UIImage(imageLiteralResourceName: pattern.imageName))
                             }
                         }

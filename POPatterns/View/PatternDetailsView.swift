@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PatternDetailsView: View {
     
+    var patterns: PatternModel
     
     var body: some View {
         NavigationStack {
@@ -23,13 +24,13 @@ struct PatternDetailsView: View {
                             RoundedRectangle(cornerRadius: 15)
                                 .foregroundStyle(.white)
                                 .frame(width: 350, height: 200)
-                            Image("ascending-triangle")
+                            Image(patterns.imageName)
                                 .resizable()
                                 .frame(width: 350, height: 200)
                         }
                         VStack(spacing: 10) {
                             ScrollView {
-                                Text("Description here")
+                                Text(patterns.description)
                                     .padding()
                             }
                             .frame(width: 350, height: 350)
@@ -43,7 +44,7 @@ struct PatternDetailsView: View {
             }.toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {
-                        Text("PATTERN NAME")
+                        Text(patterns.title)
                             .font(.largeTitle)
                             .bold()
                     }
@@ -55,6 +56,6 @@ struct PatternDetailsView: View {
 
 
 
-#Preview {
-    PatternDetailsView()
-}
+//#Preview {
+//    PatternDetailsView(patterns: PatternModel.ascendingTriangle)
+//}
