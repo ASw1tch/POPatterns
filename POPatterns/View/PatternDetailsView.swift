@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PatternDetailsView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     var patterns: PatternModel
     
     var body: some View {
@@ -38,15 +39,24 @@ struct PatternDetailsView: View {
                             .cornerRadius(15)
                             .lineLimit(nil)
                             ButtonView(name: "ADD TO FAVORITES" , action: {print("Added to favorites")})
-                            ButtonView(name: "BACK TO LIST", action: {print("Back to list")})
+                            ButtonView(name: "BACK TO LIST", action: {
+                                self.presentationMode.wrappedValue.dismiss()
+                            })
                         }
                 }
-            }.toolbar {
+            }.navigationBarBackButtonHidden()
+             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {
-                        Text(patterns.title)
-                            .font(.largeTitle)
-                            .bold()
+                        if patterns.title.count > 15 {
+                            Text(patterns.title)
+                                .font(.system(size: 25))
+                                .bold()
+                        } else {
+                            Text(patterns.title)
+                                .font(.title)
+                                .bold()
+                        }
                     }
                 }
             }

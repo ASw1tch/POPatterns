@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PNLCalculatorView: View {
+    @Environment(\.presentationMode) var presentationMode
     
     @State private var entryPrice: Double
     @State private var exitPrice: Double
@@ -29,19 +30,24 @@ struct PNLCalculatorView: View {
                 .ignoresSafeArea()
                 
                 VStack(spacing: 20) {
-                    
-                    NavigationLink(destination: PatternsView(), label: {
-                        Image(systemName: "arrow.left")
-                        Text("BACK TO PATTERNTS")
+                    HStack {
                         
-                    })
-                    .padding()
+                        Button(action: {self.presentationMode.wrappedValue.dismiss()}) {
+                            Image(systemName: "arrow.left")
+                            Text("BACK TO PATTERNS")
+                            
+                        }.padding()
+                            .frame(width: 350)
+                            .foregroundColor(.black)
+                            .background(.white)
+                            .cornerRadius(10)
+                    }
                     .font(.subheadline)
                     .frame(width: 350)
                     .foregroundColor(.black)
                     .background(.white)
                     .cornerRadius(10)
-
+                    
                     
                     ZStack {
                         RoundedRectangle(cornerRadius: 15)
@@ -87,15 +93,16 @@ struct PNLCalculatorView: View {
                         ButtonView(name: "CALCULATE PNL" , action: { print("Calculating")})
                     }
                 }
-            }.toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Text("PNL ASSISTANT")
-                            .font(.largeTitle)
-                            .bold()
+            }.navigationBarBackButtonHidden()
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        HStack {
+                            Text("PNL ASSISTANT")
+                                .font(.largeTitle)
+                                .bold()
+                        }
                     }
                 }
-            }
         }
     }
     

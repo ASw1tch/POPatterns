@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA4D22EF2BAEEF2A00ABC57A /* ResultPNLCalucationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4D22EE2BAEEF2A00ABC57A /* ResultPNLCalucationView.swift */; };
 		EACF5C562BAB7D9200FA0391 /* PatternModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF5C552BAB7D9200FA0391 /* PatternModel.swift */; };
 		EAE3A7B22BAA056E003BB154 /* POPatternsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3A7B12BAA056E003BB154 /* POPatternsApp.swift */; };
 		EAE3A7B42BAA056E003BB154 /* PatternsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3A7B32BAA056E003BB154 /* PatternsView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA4D22EE2BAEEF2A00ABC57A /* ResultPNLCalucationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPNLCalucationView.swift; sourceTree = "<group>"; };
 		EACF5C552BAB7D9200FA0391 /* PatternModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternModel.swift; sourceTree = "<group>"; };
 		EAE3A7AE2BAA056E003BB154 /* POPatterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POPatterns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE3A7B12BAA056E003BB154 /* POPatternsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPatternsApp.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				EAE3A7C12BAA0965003BB154 /* ButtonView.swift */,
 				EAFF37582BAA3E9D00961755 /* PNLCalculatorView.swift */,
 				EAE3A7C62BAA12B8003BB154 /* ButtonImageView.swift */,
+				EA4D22EE2BAEEF2A00ABC57A /* ResultPNLCalucationView.swift */,
 				EAE3A7C82BAA312E003BB154 /* PatternDetailsView.swift */,
 				EAFF375A2BAA3ED700961755 /* FavoritesView.swift */,
 			);
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAE3A7C92BAA312E003BB154 /* PatternDetailsView.swift in Sources */,
+				EA4D22EF2BAEEF2A00ABC57A /* ResultPNLCalucationView.swift in Sources */,
 				EAFF37592BAA3E9D00961755 /* PNLCalculatorView.swift in Sources */,
 				EAE3A7C72BAA12B8003BB154 /* ButtonImageView.swift in Sources */,
 				EAE3A7B42BAA056E003BB154 /* PatternsView.swift in Sources */,
