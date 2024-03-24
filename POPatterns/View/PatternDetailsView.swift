@@ -10,6 +10,8 @@ import SwiftUI
 struct PatternDetailsView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var favoritesViewModel: FavoritesViewModel
+    
     var patterns: PatternModel
     
     var body: some View {
@@ -38,7 +40,16 @@ struct PatternDetailsView: View {
                             .background(Color.white)
                             .cornerRadius(15)
                             .lineLimit(nil)
-                            ButtonView(name: "ADD TO FAVORITES" , action: {print("Added to favorites")})
+                            if favoritesViewModel.contains(patterns) {
+                                ButtonView(name: "REMOVE FROM FAVORITES" , action: {
+                                    favoritesViewModel.removeFromFavorites(patterns)
+                                })
+                            } else {
+                                ButtonView(name: "ADD TO FAVORITES" , action: {
+                                    favoritesViewModel.addToFavorites(patterns)
+                                })
+                            }
+                            
                             ButtonView(name: "BACK TO LIST", action: {
                                 self.presentationMode.wrappedValue.dismiss()
                             })
@@ -63,9 +74,3 @@ struct PatternDetailsView: View {
         }
     }
 }
-
-
-
-//#Preview {
-//    PatternDetailsView(patterns: PatternModel.ascendingTriangle)
-//}

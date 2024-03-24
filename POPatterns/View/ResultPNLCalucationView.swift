@@ -10,6 +10,9 @@ import SwiftUI
 struct ResultPNLCalucationView: View {
     @Environment(\.presentationMode) var presentationMode
     
+    let totalProfit: Double
+    let profitPercentage: Double
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -41,7 +44,10 @@ struct ResultPNLCalucationView: View {
                             RoundedRectangle(cornerRadius: 15)
                                 .foregroundStyle(.white)
                                 .frame(width: 350, height: 200)
-                            Text("Result")
+                            VStack {
+                                Text("Total Profit: \(String(format: "%.1f", profitPercentage))")
+                                Text("Profit Percentage: \(String(format: "%.1f", profitPercentage))%")
+                            }
                                 .padding()
                                 .frame(width: 350, height: 200)
                                 .multilineTextAlignment(.center)
@@ -69,5 +75,5 @@ struct ResultPNLCalucationView: View {
 
 
 #Preview {
-    ResultPNLCalucationView()
+    ResultPNLCalucationView(totalProfit: 0, profitPercentage: 0)
 }

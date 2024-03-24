@@ -9,20 +9,11 @@ import SwiftUI
 
 struct PatternsView: View {
     
+    @State private var patterns: [PatternModel] = []
     @State var selectedPattern: PatternModel?
     
-    let patterns: [PatternModel] = [
-        .ascendingTriangle,
-        .cupAndHandle,
-        .descendingTriangle,
-        .doubleBottom,
-        .doubleTop,
-        .headNShoulders,
-        .pennantOrFlags,
-        .roundingBottom,
-        .symmetricalTriangle,
-        .wedges
-    ]
+    let favoritesViewModel = FavoritesViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -30,9 +21,9 @@ struct PatternsView: View {
                                startPoint: .top,
                                endPoint: .bottom)
                 .ignoresSafeArea()
-               ScrollView {
+                ScrollView {
                     VStack(spacing: 10) {
-                        NavigationLink(destination: PNLCalculatorView(entryPrice: 0, exitPrice: 0, sharesAmount: 0, feePercentage: 0), label: {
+                        NavigationLink(destination: PNLCalculatorView(), label: {
                             Text("PNL ASSISTANT")
                             Image(systemName: "chevron.compact.forward")
                         })
@@ -44,25 +35,33 @@ struct PatternsView: View {
                         .cornerRadius(10)
                         
                         ForEach(patterns, id: \.self) { pattern in
-                            NavigationLink(destination: PatternDetailsView(patterns: pattern)) {
+                            NavigationLink(destination: PatternDetailsView(favoritesViewModel: favoritesViewModel, patterns: pattern)) {
                                 ButtonImageView(title: pattern.title, image: UIImage(imageLiteralResourceName: pattern.imageName))
                             }
                         }
                     }
                 }.padding()
-            } .toolbar {
+            }.toolbar {
                 ToolbarItemGroup(placement: .automatic) {
-                    HStack(spacing: 25) {
-                        Text("PATTERNS")
-                            .font(.title)
-                            .bold()
-                            .foregroundStyle(.primary)
-                        Spacer()
-                        NavigationLink("FAVORITES", destination: FavoritesView())
-                            .font(.title)
-                            .bold()
-                            .foregroundStyle(Color(hex: "8D9192"))
-                    }
+                                HStack(spacing: 25) {
+                                    Text("PATTERNS")
+                                        .font(.title)
+                                        .bold()
+                                        .foregroundStyle(.primary)
+                                    Spacer()
+                                    NavigationLink("FAVORITES", destination: FavoritesView(favoritesViewModel: favoritesViewModel, allPatterns: patterns))
+                                        .font(.title)
+                                        .bold()
+                                        .foregroundStyle(Color(hex: "8D9192"))
+                                }
+                            }
+                        }
+        }.onAppear {
+            if let data = PatternJSON.data {
+                do {
+                    patterns = try JSONDecoder().decode([PatternModel].self, from: data)
+                } catch {
+                    print("Error decoding patterns: \(error)")
                 }
             }
         }

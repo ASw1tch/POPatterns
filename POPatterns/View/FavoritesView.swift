@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct FavoritesView: View {
+    @ObservedObject var favoritesViewModel: FavoritesViewModel
+    @StateObject var favorites = FavoritesViewModel()
+    
+    let allPatterns: [PatternModel]
+    
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -15,14 +21,31 @@ struct FavoritesView: View {
                                startPoint: .top,
                                endPoint: .bottom)
                 .ignoresSafeArea()
-                ScrollView {
-                    Text("Favorites")
+                if favoritesViewModel.favorites.isEmpty {
+                    VStack(alignment: .center) {
+                        Image(systemName: "icloud.slash")
+                        Text("There's no favorites yet")
+                    }.padding()
+                        .bold()
+                } else {
+                    ScrollView {
+                        ForEach(Array(favoritesViewModel.favorites), id: \.self) { patternID in
+                            if let pattern = allPatterns.first(where: { $0.id == patternID }) {
+                                NavigationLink(destination: PatternDetailsView(favoritesViewModel: favoritesViewModel, patterns: pattern)) {
+                                    ButtonImageView(title: pattern.title, image: UIImage(imageLiteralResourceName: pattern.imageName))
+                                }
+                            } else {
+                                Text("Pattern not found")
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-#Preview {
-    FavoritesView()
-}
+//#Preview {
+//
+//    FavoritesView()
+//}
